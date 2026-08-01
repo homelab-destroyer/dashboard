@@ -34,3 +34,13 @@ location /api/prometheus/ {
 - Ajusta nodos especiales y grupos de servicios en `assets/dashboard.js`.
 - Ajusta colores, escalado y layout en `assets/dashboard.css`.
 - Las fuentes JetBrains Mono se alojan localmente en `assets/` para que la pantalla no dependa de Internet.
+
+## Publicar en el homelab
+
+Desde un equipo con los alias SSH `homelab-node1` y `homelab-node2` configurados:
+
+```bash
+./scripts/deploy-dashboard.sh
+```
+
+El contenido web se publica en `homelab-node1`, donde Nginx aloja `dashboard.destroyer.me`. Al finalizar, el script reinicia Chromium en `homelab-node2`, la pantalla táctil del dashboard, para que cargue la versión publicada.
