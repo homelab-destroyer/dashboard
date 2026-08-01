@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081012">
+  <title>Homelab Destroyer</title>
+  <link rel="stylesheet" href="/assets/dashboard.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-dot">●</span> HOMELAB DESTROYER</div>
+      <nav class="page-nav" aria-label="Pantallas del dashboard">
+        <button class="page-button active" data-page="home"><span>01</span> INICIO</button>
+        <button class="page-button" data-page="services"><span>02</span> SERVICIOS</button>
+        <button class="page-button" data-page="backups"><span>03</span> BACKUPS</button>
+        <button class="page-button" data-page="alerts"><span>04</span> ALERTAS</button>
+        <i id="data-state" class="data-state">EN DIRECTO</i>
+      </nav>
+      <time id="clock" aria-label="Hora actual"></time>
+    </header>
+    <main>
+      <section id="home-page" class="screen home-screen active">
+        <section class="vitals" aria-label="Estado vital de Homelab Server">
+          <div class="section-label"><span>01</span> VITALES <small>HOMELAB-SERVER</small></div>
+          <div id="gauges" class="gauge-grid"></div>
+        </section>
+        <section class="nodes" aria-label="Estado de nodos">
+          <div class="section-label"><span>02</span> NODOS <small id="node-summary">CARGANDO MÉTRICAS</small></div>
+          <div id="node-grid" class="node-grid"></div>
+        </section>
+      </section>
+      <section id="services-page" class="screen services-screen" aria-label="Estado de servicios">
+        <div class="section-label"><span>02</span> SERVICIOS <small id="service-summary">CARGANDO MONITORES</small></div>
+        <div id="service-grid" class="service-grid"></div>
+      </section>
+      <section id="backups-page" class="screen backups-screen" aria-label="Estado de backups">
+        <div class="section-label"><span>03</span> BACKUPS <small id="backup-summary">CARGANDO REPOSITORIOS</small></div>
+        <div class="backup-overview"><div><span>BACKUPS CORRECTOS</span><strong id="backup-total">—</strong></div><div><span>LÍMITE DE ALERTA</span><strong>26 H</strong></div><div><span>PROGRAMACIÓN</span><strong>23:30</strong></div></div>
+        <div id="backup-grid" class="backup-grid"></div>
+      </section>
+      <section id="alerts-page" class="screen alerts-screen" aria-label="Alertas activas">
+        <div class="section-label"><span>04</span> ALERTAS <small id="alert-summary">CARGANDO ALERTAS</small></div>
+        <div id="alert-grid" class="alert-grid"></div>
+      </section>
+    </main>
+  </div>
+  <script src="/assets/dashboard.js" defer></script>
+</body>
+</html>
