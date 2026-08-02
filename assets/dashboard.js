@@ -1,7 +1,7 @@
 const REFRESH_MS=15_000,HOME_TIMEOUT_MS=300_000,MAX_FAILURES=3,API='/api/prometheus/api/v1/query';
 const SPECIAL_NODES={'homelab-server':{label:'SERVICIOS',type:'services'},'homelab-node1':{label:'BACKUPS',type:'backups'},'homelab-node2':{label:'ALERTAS',type:'alerts'}};
 const SERVICE_GROUPS=[
- {title:'DOKPLOY & APPS',tone:'green',names:['Dokploy','Hermes']},
+ {title:'DOKPLOY & APPS',tone:'green',names:['Dokploy','Hermes','crm']},
  {title:'AUTOMATIZACIÓN',tone:'cyan',names:['n8n','Web Operations']},
  {title:'MONITORIZACIÓN',tone:'amber',names:['Prometheus','Uptime Kuma','Alertmanager']},
  {title:'INFRAESTRUCTURA',tone:'cyan',names:['cadvisor']},
